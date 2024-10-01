@@ -1,13 +1,124 @@
 <html>
 <head>
-    <title>Home</title> 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/01ac7e4623.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Home</h1>
-    <p>Home page</p>
-    <a href="about.php">About</a>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <img src="images/logo.png" class="logo">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-text"></div>
+      <p class="hello">Hello, my name is <span class="name">Kennedy Njiraini</span></p>
+      <h1 class="my-profession">I'm a <span class="auto-type"></span></h1>
+    </div>
+  </div> 
+  <!---About--->
+  <div id="About">
+    <div class="container">
+    <div class="row">
+      <div class="about-col-1">
+        <img src="images/user.png">
+      </div>
+      <div class="about-col-2">
+        <h1 class="sub-title">About Me</h1>
+        <p>I am a committed Software Engineer specializing in backend development with Python and node js, I bring a wealth of expertise in building scalable and secure software solutions. My proficiency in Django and Express enables me to deliver robust backend systems tailored to diverse project needs and project goals.<p>
+        <div class="tab-titles">
+          <p class="tab-links active-link" onclick="opentab('skills')" >Skills</p>
+          <p class="tab-links" onclick="opentab('experience')">Experience</p>
+          <p class="tab-links" onclick="opentab('education')">Education</p>
+        </div>
+        <div class="tab-contents active-tab" id="skills">
+          <ul>
+            <li><span>Software Developer</span><br>Database management and Backend languages</li>
+            <li><span>Web Designer</span><br>Designing Responsive Websites<br></li>
+            <li><span>Content  Marketing</span><br>Digital Marketing and Content Writing</li>
+          </ul>
+        </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li><span>2023 - Current</span><br>Freelancer Web Developer & Content Writer</li>
+              <li><span>2018 - 2022</span><br>Admin and Researcher at TradeCare Africa<br></li>
+              <li><span>2016 - 2018</span><br>Researcher at Superior Consultants</li>
+              <li><span>2015 - 2016</span><br>Internship at Kenya Highlands</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li><span> Sept 2022 - December 2023</span><br>ALX SE Program</li>
+              <li><span>August 2021 - January 2022 </span><br> Digital  Marketing <br></li>
+              <li><span>2010 - 2015</span><br>BSC. Agribusiness Management</li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!---Services--->
+  <div id="services">
+    <div class="container">
+      <h1 class="sub-title">My Services</h1>
+      <div class="services-list">
+        <div>
+          <i class="fa-solid fa-code"></i>
+          <h2>Web Design</h2>
+          <p>Designing responsive websites that look great on any device</p>  
+          <a href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-laptop"></i>
+          <h2>Digital Marketing </h2>
+          <p> I write SEO optmised blogs and use google ads to guarantee high traffic flow to your website.</p>  
+          <a href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-brands fa-app-store"></i>
+          <h2>Software Developer</h2>
+          <p>I excel in general software development, deploying backend and server infrastructure for a wide range of projects</p>  
+          <a href="#">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---Portfolio--->
+  <div id="portfolio"></div>
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname) {
+      for(tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+      for(tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab")
+    }
+  </script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed(".auto-type", {
+      strings: ["Programmer", "Web Developer", "Software Engineer", "Content Writer", "Digital Marketer"],
+      typeSpeed: 150,
+      backSpeed: 150,
+      loop: true
+    });
+  </script>
+  </body>
 </html>
